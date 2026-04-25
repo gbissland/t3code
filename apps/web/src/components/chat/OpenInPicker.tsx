@@ -11,6 +11,7 @@ import {
   CursorIcon,
   Icon,
   KiroIcon,
+  NovaIcon,
   TraeIcon,
   IntelliJIdeaIcon,
   VisualStudioCode,
@@ -67,6 +68,11 @@ const resolveOptions = (platform: string, availableEditors: ReadonlyArray<Editor
       label: "IntelliJ IDEA",
       Icon: IntelliJIdeaIcon,
       value: "idea",
+    },
+    {
+      label: "Nova",
+      Icon: NovaIcon,
+      value: "nova",
     },
     {
       label: isMacPlatform(platform)

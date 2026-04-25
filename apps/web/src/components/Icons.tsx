@@ -461,6 +461,15 @@ export const AntigravityIcon: Icon = (props) => (
   </svg>
 );
 
+export const NovaIcon: Icon = (props) => (
+  <svg {...props} viewBox="0 0 24 24" fill="none">
+    <path
+      fill="currentColor"
+      d="M12 1.5c.3 0 .56.2.65.49l1.94 6.42 6.42 1.94a.68.68 0 0 1 0 1.3l-6.42 1.94-1.94 6.42a.68.68 0 0 1-1.3 0l-1.94-6.42-6.42-1.94a.68.68 0 0 1 0-1.3l6.42-1.94 1.94-6.42A.68.68 0 0 1 12 1.5Z"
+    />
+  </svg>
+);
+
 export const IntelliJIdeaIcon: Icon = (props) => {
   const id = useId();
   const gradientAId = `${id}-idea-a`;

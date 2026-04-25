@@ -98,6 +98,16 @@ it.layer(NodeServices.layer)("resolveEditorLaunch", (it) => {
         command: "idea",
         args: ["/tmp/workspace"],
       });
+
+      const novaLaunch = yield* resolveEditorLaunch(
+        { cwd: "/tmp/workspace", editor: "nova" },
+        "darwin",
+        { PATH: "" },
+      );
+      assert.deepEqual(novaLaunch, {
+        command: "nova",
+        args: ["/tmp/workspace"],
+      });
     }),
   );
 
