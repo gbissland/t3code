@@ -70,4 +70,6 @@ Note: `bun test` at the repo root crashes with a Bun/vitest incompatibility (`vi
 
 ## Known issues / future investigation
 
-- **Nova focus behaviour**: when Nova is already open on a different project, `nova /path` may bring the window to focus without switching projects. Test with `nova ~/some/folder` from terminal — if that opens the folder fine, the picker is working correctly and the issue is Nova-side.
+- **Nova focus behaviour** (confirmed 2026-04-26): when Nova is already running, T3's "Open in Nova" button just brings the existing window to focus instead of switching to the project folder. Running `nova /path` from terminal works correctly — Nova opens the folder. So the issue is how Nova's CLI handles being invoked while the app is already running. Two possible fixes if this ever bothers us enough:
+  1. Switch Nova's launch to use `open -na "Nova" --args "$path"` (macOS pattern for forcing a new instance) — would need a Nova-specific branch in `apps/server/src/open.ts`.
+  2. Check `nova --help` for a new-window flag and add it to the editor entry's `baseArgs` in `packages/contracts/src/editor.ts`.
